@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>anyDownloader - Download</title>
+    <style>
+        .demo-container {
+  width: 300px;
+  margin: auto;
+            display: none;
+}
+        .progress-bar {
+  height: 4px;
+  background-color: rgba(5, 114, 206, 0.2);
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-bar-value {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(5, 114, 206);
+  animation: indeterminateAnimation 1s infinite linear;
+  transform-origin: 0% 50%;
+}
+
+@keyframes indeterminateAnimation {
+  0% {
+    transform:  translateX(0) scaleX(0);
+  }
+  40% {
+    transform:  translateX(0) scaleX(0.4);
+  }
+  100% {
+    transform:  translateX(100%) scaleX(0.5);
+  }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">anyDownloader</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 style="text-align: center;">YouTube Downloader</h1>
+        <br>
+        <a onclick="window.alert('Download will begin shortly, please wait');document.getElementById('progress').style.display = 'block';" href="youtube_mp3/{{ id }}" class="btn btn-primary" style="margin-left: 25%;" download>Download {{ title }} mp3</a>
+        <br><br>
+        <a onclick="window.alert('Download will begin shortly, please wait');document.getElementById('progress').style.display = 'block';" href="youtube_mp4/{{ id }}" class="btn btn-primary" style="margin-left: 25%;" download>Download {{ title }} mp4</a>
+        <br><br>
+        <div class="demo-container" id="progress">
+                <div class="progress-bar">
+                    <div class="progress-bar-value"></div>
+                </div>
+            </div>
+
+    </div>
+</body>
+</html>
